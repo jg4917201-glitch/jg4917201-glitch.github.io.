@@ -8,3 +8,130 @@
     <p>Especialistas en optimización técnica y soluciones digitales en Paraguay.</p>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6433708347985995"
+     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6433708347985995"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Click Py | Soluciones Digitales</title>
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --dark-bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+        header {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #00151a 0%, #004554 100%);
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+        }
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            transition: 0.4s;
+        }
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+        }
+        .btn-main {
+            display: inline-block;
+            background: var(--primary);
+            color: black;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        /* Estilos Calculadora */
+        .calc-section {
+            background: #151515;
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid var(--primary);
+            margin-top: 50px;
+        }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #333; background: #222; color: white; box-sizing: border-box; }
+        .calc-btn { width: 100%; background: var(--primary); color: black; border: none; padding: 15px; border-radius: 50px; font-weight: bold; margin-top: 20px; cursor: pointer; }
+        footer { text-align: center; padding: 40px; border-top: 1px solid #222; color: #666; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nova Click Py</h1>
+        <p>Marketing, Diseño y Tecnología en Paraguay</p>
+        <a href="https://wa.me/595993580494" class="btn-main">Contactar ahora</a>
+    </header>
+
+    <div class="container">
+        <h2 style="text-align:center;">Nuestros Servicios</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>📈 Marketing & SEO</h3>
+                <p>Estrategias digitales para que tu negocio destaque en Paraguay.</p>
+            </div>
+            <div class="card">
+                <h3>🎨 Diseño Gráfico</h3>
+                <p>Identidad visual y logos que venden.</p>
+            </div>
+            <div class="card">
+                <h3>💻 Desarrollo Web</h3>
+                <p>Sitios modernos y rápidos para tu agencia.</p>
+            </div>
+        </div>
+
+        <div class="calc-section">
+            <h2 style="text-align:center; color: var(--primary);">Calculadora de Profit</h2>
+            <div class="calc-grid">
+                <input type="number" id="costo" placeholder="Costo Producto (Gs)">
+                <input type="number" id="venta" placeholder="Precio Venta (Gs)">
+                <input type="number" id="ads" placeholder="Publicidad (Gs)">
+                <input type="number" id="envio" value="15000">
+            </div>
+            <button class="calc-btn" onclick="calcular()">CALCULAR GANANCIA</button>
+            <div id="resultado" style="margin-top: 20px; text-align: center; font-size: 1.5rem; font-weight: bold; color: #00ff88;"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <b>Nova Click Py</b> - Paraguay</p>
+    </footer>
+
+    <script>
+        function calcular() {
+            const costo = parseFloat(document.getElementById('costo').value) || 0;
+            const venta = parseFloat(document.getElementById('venta').value) || 0;
+            const ads = parseFloat(document.getElementById('ads').value) || 0;
+            const envio = parseFloat(document.getElementById('envio').value) || 0;
+            
+            // Cálculo: Venta menos costos y 5% de comisión de plataforma
+            const ganancia = venta - costo - ads - envio - (venta * 0.05);
+            
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerText = "Ganancia: " + ganancia.toLocaleString() + " Gs.";
+            
+            // Si es ganancia sale en verde, si es pérdida en rojo
+            resultadoDiv.style.color = ganancia >= 0 ? "#00ff88" : "#ff4444";
+        }
+    </script>
+</body>
+</html>
